@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CalendarSystem.Domain.Appointment>
+
+@{
+    ViewBag.Title = "GetDetailsOfAppointment";
+}
+
+<h2>GetDetailsOfAppointment</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfAppointment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organizer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attendees)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfAppointment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organizer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonthID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attendees)
+            </td>
+
+        </tr>
+    }
+
+</table>

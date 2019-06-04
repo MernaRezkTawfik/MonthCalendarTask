@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CalendarSystem.Domain.Appointment>
+
+@{
+    ViewBag.Title = "GetAppointment";
+}
+
+<h2>GetAppointment</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfAppointment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfAppointment)
+            </td>
+            <td>
+                @Html.ActionLink(item.Description, "GetDetailsOfAppointment", routeValues: new { id = item.Id }, htmlAttributes: new { @class = "btn btn-link" })
+            </td>
+
+        </tr>
+    }
+
+</table>
